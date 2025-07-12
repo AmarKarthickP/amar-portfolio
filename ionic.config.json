@@ -1,0 +1,7 @@
+{
+  "name": "TXTBOOK",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
