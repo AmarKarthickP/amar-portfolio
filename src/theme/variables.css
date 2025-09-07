@@ -1,2 +1,15 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
+@import "tailwindcss";
+
+:root {
+  /* Override Ionic primary color */
+  --ion-color-primary: #469649; /* Your green */
+  --ion-color-primary-rgb: 65, 117, 78;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #376343;
+  --ion-color-primary-tint: #5a8b66;
+}
+
+
