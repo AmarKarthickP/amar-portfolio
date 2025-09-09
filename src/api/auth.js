@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const SITE = 'https://sam-tiger-telescope-note.trycloudflare.com'
+const SITE = 'https://raise-relationships-modification-submitting.trycloudflare.com'
 const BASE_URL = `${SITE}/api/method/`
 
 export const login = async (email, password) => {

@@ -1,146 +1,214 @@
 <template>
-  <ion-page>
-    <ion-content>
-      <div style="font-family: 'Poppins';" class="h-[100vh] bg-[whitesmoke] shadow-xl" shadow-gray-600>
-        <!-- Header Section -->
-        <div class="bg-gradient-to-r from-[#2E7D32] to-[#66BB6A] justify-center items-center py-10 px-5">
-          <!-- Profile Section -->
-          <div class="flex mt-4">
-            <p class="text-white text-xl font-medium pt-1.5">{{ userName }}</p>
-            <button @click="toggleProfilePanel" class="ml-auto active:scale-95 transition duration-200">
-              <img class="ml-auto h-10 w-10 bg-[cover] rounded-full shadow-lg shadow-gray-600" src="../assets/default-profile.jpeg" alt="profile-image" />
-            </button>
-          </div>
-          <div class="flex relative gap-5">
-            <!-- Search Bar -->
-            <div class="text-[#41754e] font-medium relative mt-5">
-              <input type="search" id="fullname" name="fullname" placeholder="Search by name"
-                class="bg-white w-full text-sm rounded-lg shadow-lg shadow-gray-600 pl-3 pr-10 pt-2 pb-1 focus:outline-none"
-              >
-              <svg class="h-6 w-6 text-[#41754e] absolute top-1.5 right-3"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" />  <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              </svg>
-            </div>
-            <!-- Filters -->
-            <div class="bg-white shadow-lg shadow-gray-600 mt-5 right-2 p-1 py-1.5 rounded-md
+    <ion-page>
+        <ion-content>
+            <div style="font-family: 'Poppins';" class="h-[100vh] bg-[whitesmoke] shadow-xl" shadow-gray-600>
+                <!-- Header Section -->
+                <div class="bg-gradient-to-r from-[#2E7D32] to-[#66BB6A] justify-center items-center py-10 px-5">
+                    <!-- Profile Section -->
+                    <div class="flex mt-4">
+                        <p class="text-white text-xl font-medium pt-1.5">{{ userName }}</p>
+                        <button @click="toggleProfilePanel" class="ml-auto active:scale-95 transition duration-200">
+                            <img class="ml-auto h-10 w-10 bg-[cover] rounded-full shadow-lg shadow-gray-600" src="../assets/default-profile.jpeg" alt="profile-image" />
+                        </button>
+                    </div>
+                    <div class="flex relative gap-5">
+                        <!-- Search Bar -->
+                        <div class="text-[#41754e] font-medium relative mt-5">
+                            <input type="search" id="fullname" name="fullname" placeholder="Search by name" class="bg-white w-full text-sm rounded-lg shadow-lg shadow-gray-600 pl-3 pr-10 pt-2 pb-1 focus:outline-none">
+                            <svg class="h-6 w-6 text-[#41754e] absolute top-1.5 right-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            </svg>
+                        </div>
+                        <!-- Filters -->
+                        <div class="bg-white shadow-lg shadow-gray-600 mt-5 right-2 p-1 py-1.5 rounded-md
                         active:bg-[#66BB6A] active:text-white">
-              <svg class="h-6 w-7 text-[#41754e] pt-1"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  
-                <line x1="4" y1="21" x2="4" y2="14" />  
-                <line x1="4" y1="10" x2="4" y2="3" />  
-                <line x1="12" y1="21" x2="12" y2="12" />  
-                <line x1="12" y1="8" x2="12" y2="3" />  
-                <line x1="20" y1="21" x2="20" y2="16" />  
-                <line x1="20" y1="12" x2="20" y2="3" />  
-                <line x1="1" y1="14" x2="7" y2="14" />  
-                <line x1="9" y1="8" x2="15" y2="8" />  
-                <line x1="17" y1="16" x2="23" y2="16" />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <!-- Content -->
-        <div class="bg-[whitesmoke] justify-center items-center p-5 -mt-3 rounded-2xl">
-          <!-- Welcome Bonus -->
-          <div class="bg-gradient-to-t from-[#2E7D32] to-[#66BB6A] rounded-xl shadow-lg shadow-gray-400 min-h-20 w-full p-5 relative">
-            <p class="bg-white text-center shadow-lg text-sm rounded-full font-medium px-2 py-1 w-[150px]">One time offer!</p>
-            <p class="text-white text-xl font-medium mt-4">Get Special Offer</p>
-            <p class="text-white text-md mt-1 font-medium">upto</p>
-            <p class="absolute top-22 left-18 text-[35px] font-medium text-white">60</p>
-            <p class="absolute top-30 left-28 px-1 bg-teal-600 text-white rounded-full text-[12px]">%</p>
-            <p class="text-white text-sm font-medium mt-4">on you first book</p>
-            <img class="absolute bottom-0 -right-4 w-[190px]" src="../assets/free-first-book.png" alt="one-time-offer" />
-            <p class="bg-[#C8E6C9] text-[#41754e] absolute bottom-4 right-6 shadow-lg shadow-gray-600 text-center text-[10px]
+                            <svg class="h-6 w-7 text-[#41754e] pt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="4" y1="21" x2="4" y2="14" />
+                                <line x1="4" y1="10" x2="4" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="12" />
+                                <line x1="12" y1="8" x2="12" y2="3" />
+                                <line x1="20" y1="21" x2="20" y2="16" />
+                                <line x1="20" y1="12" x2="20" y2="3" />
+                                <line x1="1" y1="14" x2="7" y2="14" />
+                                <line x1="9" y1="8" x2="15" y2="8" />
+                                <line x1="17" y1="16" x2="23" y2="16" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content -->
+                <div class="bg-[whitesmoke] justify-center items-center p-5 -mt-3 rounded-2xl">
+                    <!-- Welcome Bonus -->
+                    <div class="bg-gradient-to-t from-[#2E7D32] to-[#66BB6A] rounded-xl shadow-lg shadow-gray-400 min-h-20 w-full p-5 relative">
+                        <p class="bg-white text-center shadow-lg text-sm rounded-full font-medium px-2 py-1 w-[150px]">One time offer!</p>
+                        <p class="text-white text-xl font-medium mt-4">Get Special Offer</p>
+                        <p class="text-white text-md mt-1 font-medium">upto</p>
+                        <p class="absolute top-22 left-18 text-[35px] font-medium text-white">60</p>
+                        <p class="absolute top-30 left-28 px-1 bg-teal-600 text-white rounded-full text-[12px]">%</p>
+                        <p class="text-white text-sm font-medium mt-4">on you first book</p>
+                        <img class="absolute bottom-0 -right-4 w-[190px]" src="../assets/free-first-book.png" alt="one-time-offer" />
+                        <p class="bg-[#C8E6C9] text-[#41754e] absolute bottom-4 right-6 shadow-lg shadow-gray-600 text-center text-[10px]
              rounded-full font-medium px-1 py-1 w-[70px] hover:bg-[#A5D6A7] transition">
-              Claim
-            </p>
-          </div>
-          <!-- Categories -->
-           <!-- <div>
-            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path d="M36.787 44.422a14.94 14.94 0 0 1-.771 2.884l3.131 2.837a18.877 18.877 0 0 1-1.516 2.646l-4.02-1.296a15.042 15.042 0 0 1-2.119 2.118l1.296 4.02a18.977 18.977 0 0 1-2.646 1.516l-2.837-3.131c-.922.349-1.885.608-2.884.771l-.893 4.136c-.505.04-1.012.077-1.528.077s-1.023-.037-1.529-.077l-.893-4.136a14.94 14.94 0 0 1-2.884-.771l-2.837 3.131a18.877 18.877 0 0 1-2.646-1.516l1.296-4.02a15.088 15.088 0 0 1-2.118-2.118l-4.02 1.296a18.977 18.977 0 0 1-1.516-2.646l3.131-2.837a14.921 14.921 0 0 1-.771-2.884l-4.136-.893C3.037 43.023 3 42.516 3 42s.037-1.023.077-1.529l4.136-.893a14.94 14.94 0 0 1 .771-2.884l-3.131-2.837c.439-.924.939-1.812 1.516-2.646l4.02 1.296a15.042 15.042 0 0 1 2.119-2.118l-1.296-4.02a18.977 18.977 0 0 1 2.646-1.516l2.837 3.131a14.921 14.921 0 0 1 2.884-.771l.893-4.136C20.977 23.037 21.484 23 22 23s1.023.037 1.529.077l.893 4.136a14.94 14.94 0 0 1 2.884.771l2.837-3.131c.924.439 1.812.939 2.646 1.516l-1.296 4.02a15.042 15.042 0 0 1 2.118 2.119l4.02-1.296a18.977 18.977 0 0 1 1.516 2.646l-3.131 2.837c.349.922.608 1.885.771 2.884l4.136.893c.04.505.077 1.012.077 1.528s-.037 1.023-.077 1.529zM22 32c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.477-10-10-10zM50.659 16.305a8.015 8.015 0 0 1-.611 1.48l1.579 3.026a11.051 11.051 0 0 1-1.815 1.815l-3.026-1.579a7.88 7.88 0 0 1-1.48.611l-1.024 3.26c-.422.05-.848.082-1.282.082s-.86-.032-1.281-.081l-1.024-3.26a7.946 7.946 0 0 1-1.48-.611l-3.026 1.579a11.051 11.051 0 0 1-1.815-1.815l1.579-3.026a7.88 7.88 0 0 1-.611-1.48l-3.26-1.024C32.032 14.86 32 14.434 32 14s.032-.86.081-1.281l3.26-1.024c.155-.517.36-1.013.611-1.48l-1.579-3.026a11.051 11.051 0 0 1 1.815-1.815l3.026 1.579a7.88 7.88 0 0 1 1.48-.611l1.024-3.26C42.14 3.032 42.566 3 43 3s.86.032 1.281.081l1.024 3.26c.517.155 1.013.36 1.48.611l3.026-1.579a11.051 11.051 0 0 1 1.815 1.815l-1.579 3.026c.252.467.456.963.611 1.48l3.26 1.024c.05.422.082.848.082 1.282s-.032.86-.081 1.281zM43 10a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM58.739 38.871a6.96 6.96 0 0 1-.649 1.572l.995 2.094a9.07 9.07 0 0 1-1.548 1.548l-2.094-.995a6.941 6.941 0 0 1-1.572.649l-.778 2.188c-.359.044-.722.073-1.093.073s-.734-.029-1.093-.073l-.778-2.188a6.96 6.96 0 0 1-1.572-.649l-2.094.995a9.07 9.07 0 0 1-1.548-1.548l.995-2.094a6.952 6.952 0 0 1-.649-1.571l-2.188-.778C43.029 37.734 43 37.371 43 37s.029-.734.073-1.093l2.188-.778a6.934 6.934 0 0 1 .649-1.571l-.995-2.094a9.07 9.07 0 0 1 1.548-1.548l2.094.995a6.941 6.941 0 0 1 1.572-.649l.778-2.188c.359-.045.722-.074 1.093-.074s.734.029 1.093.073l.778 2.188a6.96 6.96 0 0 1 1.572.649l2.094-.995a9.07 9.07 0 0 1 1.548 1.548l-.995 2.094c.278.49.495 1.017.649 1.572l2.188.778c.044.359.073.722.073 1.093s-.029.734-.073 1.093zM52 34a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM61.196 5.02l-5.981-1.196-1.196 5.98 1.961.393.539-2.692A15.005 15.005 0 0 1 58 14a14.84 14.84 0 0 1-3.29 9.375l1.561 1.251A17.049 17.049 0 0 0 60 14c0-2.619-.605-5.201-1.756-7.531l2.56.512zM23.707 13.293l-1.414 1.414 1.359 1.359A26.03 26.03 0 0 0 22 16a25.947 25.947 0 0 0-19.978 9.359l1.536 1.281A23.951 23.951 0 0 1 22 18c.509 0 1.017.029 1.525.061l-1.232 1.232 1.414 1.414L27.414 17z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
-           </div> -->
-        </div>
-
-        
-      </div>
-      <!-- Dimmed background when profile panel is open -->
-      <div v-if="showProfile" @click="toggleProfilePanel" class="fixed inset-0 z-40" style="background-color: rgba(0, 0, 0, 0.5);"></div>
-      <!-- Slide-up profile panel -->
-      <transition name="slide-up">
-        <div v-if="showProfile" class="fixed bottom-0 left-0 w-full bg-[whitesmoke] p-4 rounded-t-2xl shadow-lg z-50">
-          <p class="text-center text-[#41754e] font-semibold text-lg mb-4">Profile Options</p>
-          <div 
-            @click="handleLogout"
-            class="w-full bg-red-500 text-center text-[whitesmoke] py-1 rounded-xl font-semibold
+                            Claim
+                        </p>
+                    </div>
+                    <!-- Category -->
+                    <div class="flex mx-2">
+                      <p class="text-[#595959] mt-5 font-medium">Category</p>
+                      <p class="text-[#307f34] mt-5 font-medium text-[12px] pt-1 ml-auto">See All</p>
+                    </div>
+                    <div class="mt-3 flex gap-10 overflow-auto scrollbar-hide mx-2">
+                        <!-- CSE -->
+                        <div class="cursor-pointer">
+                            <div class="bg-[#e0e1da] p-2 rounded-full">
+                                <svg class="h-7 w-7" fill="#307f34" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path d="M64 160C64 124.7 92.7 96 128 96L512 96C547.3 96 576 124.7 576 160L576 400L512 400L512 160L128 160L128 400L64 400L64 160zM0 467.2C0 456.6 8.6 448 19.2 448L620.8 448C631.4 448 640 456.6 640 467.2C640 509.6 605.6 544 563.2 544L76.8 544C34.4 544 0 509.6 0 467.2zM281 273L250 304L281 335C290.4 344.4 290.4 359.6 281 368.9C271.6 378.2 256.4 378.3 247.1 368.9L199.1 320.9C189.7 311.5 189.7 296.3 199.1 287L247.1 239C256.5 229.6 271.7 229.6 281 239C290.3 248.4 290.4 263.6 281 272.9zM393 239L441 287C450.4 296.4 450.4 311.6 441 320.9L393 368.9C383.6 378.3 368.4 378.3 359.1 368.9C349.8 359.5 349.7 344.3 359.1 335L390.1 304L359.1 273C349.7 263.6 349.7 248.4 359.1 239.1C368.5 229.8 383.7 229.7 393 239.1z" />
+                                </svg>
+                            </div>
+                            <p class="text-[#595959] text-center mt-1 text-[13px] font-medium">CSE</p>
+                        </div>
+                        <!-- ECE -->
+                        <div class="cursor-pointer">
+                            <div class="bg-[#e0e1da] p-2 rounded-full">
+                                <svg class="h-7 w-7" fill="#307f34" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path d="M240 88C240 74.7 229.3 64 216 64C202.7 64 192 74.7 192 88L192 128C156.7 128 128 156.7 128 192L88 192C74.7 192 64 202.7 64 216C64 229.3 74.7 240 88 240L128 240L128 296L88 296C74.7 296 64 306.7 64 320C64 333.3 74.7 344 88 344L128 344L128 400L88 400C74.7 400 64 410.7 64 424C64 437.3 74.7 448 88 448L128 448C128 483.3 156.7 512 192 512L192 552C192 565.3 202.7 576 216 576C229.3 576 240 565.3 240 552L240 512L296 512L296 552C296 565.3 306.7 576 320 576C333.3 576 344 565.3 344 552L344 512L400 512L400 552C400 565.3 410.7 576 424 576C437.3 576 448 565.3 448 552L448 512C483.3 512 512 483.3 512 448L552 448C565.3 448 576 437.3 576 424C576 410.7 565.3 400 552 400L512 400L512 344L552 344C565.3 344 576 333.3 576 320C576 306.7 565.3 296 552 296L512 296L512 240L552 240C565.3 240 576 229.3 576 216C576 202.7 565.3 192 552 192L512 192C512 156.7 483.3 128 448 128L448 88C448 74.7 437.3 64 424 64C410.7 64 400 74.7 400 88L400 128L344 128L344 88C344 74.7 333.3 64 320 64C306.7 64 296 74.7 296 88L296 128L240 128L240 88zM224 192L416 192C433.7 192 448 206.3 448 224L448 416C448 433.7 433.7 448 416 448L224 448C206.3 448 192 433.7 192 416L192 224C192 206.3 206.3 192 224 192zM240 240L240 400L400 400L400 240L240 240z" />
+                                </svg>
+                            </div>
+                            <p class="text-[#595959] text-center mt-1 text-[13px] font-medium">ECE</p>
+                        </div>
+                        <!-- EEE -->
+                        <div class="cursor-pointer">
+                            <div class="bg-[#e0e1da] p-2 rounded-full">
+                                <svg  class="h-7 w-7" fill="#307f34" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path d="M420.9 448C428.2 425.7 442.8 405.5 459.3 388.1C492 353.7 512 307.2 512 256C512 150 426 64 320 64C214 64 128 150 128 256C128 307.2 148 353.7 180.7 388.1C197.2 405.5 211.9 425.7 219.1 448L420.8 448zM416 496L224 496L224 512C224 556.2 259.8 592 304 592L336 592C380.2 592 416 556.2 416 512L416 496zM312 176C272.2 176 240 208.2 240 248C240 261.3 229.3 272 216 272C202.7 272 192 261.3 192 248C192 181.7 245.7 128 312 128C325.3 128 336 138.7 336 152C336 165.3 325.3 176 312 176z" />
+                                </svg>
+                            </div>
+                            <p class="text-[#595959] text-center mt-1 text-[13px] font-medium">EEE</p>
+                        </div>
+                        <!-- Civil -->
+                        <div class="cursor-pointer">
+                            <div class="bg-[#e0e1da] p-2 rounded-full">
+                                <svg class="h-7 w-7" fill="#307f34" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path d="M384 328L384 128C384 110.3 369.7 96 352 96L288 96C270.3 96 256 110.3 256 128L256 328C256 341.3 245.3 352 232 352C218.7 352 208 341.3 208 328L208 142.1C122 173.8 64 255.8 64 352L64 416L576 416L576 352C575 256.8 517.6 174.3 432 142.2L432 328C432 341.3 421.3 352 408 352C394.7 352 384 341.3 384 328zM72 464C49.9 464 32 481.9 32 504C32 526.1 49.9 544 72 544L568 544C590.1 544 608 526.1 608 504C608 481.9 590.1 464 568 464L72 464z" />
+                                </svg>
+                            </div>
+                            <p class="text-[#595959] text-center mt-1 text-[13px] font-medium">CIVIL</p>
+                        </div>
+                        <!-- MECH -->
+                        <div class="cursor-pointer">
+                            <div class="bg-[#e0e1da] p-2 rounded-full">
+                                <svg class="h-7 w-7" fill="#307f34" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path d="M259.1 73.5C262.1 58.7 275.2 48 290.4 48L350.2 48C365.4 48 378.5 58.7 381.5 73.5L396 143.5C410.1 149.5 423.3 157.2 435.3 166.3L503.1 143.8C517.5 139 533.3 145 540.9 158.2L570.8 210C578.4 223.2 575.7 239.8 564.3 249.9L511 297.3C511.9 304.7 512.3 312.3 512.3 320C512.3 327.7 511.8 335.3 511 342.7L564.4 390.2C575.8 400.3 578.4 417 570.9 430.1L541 481.9C533.4 495 517.6 501.1 503.2 496.3L435.4 473.8C423.3 482.9 410.1 490.5 396.1 496.6L381.7 566.5C378.6 581.4 365.5 592 350.4 592L290.6 592C275.4 592 262.3 581.3 259.3 566.5L244.9 496.6C230.8 490.6 217.7 482.9 205.6 473.8L137.5 496.3C123.1 501.1 107.3 495.1 99.7 481.9L69.8 430.1C62.2 416.9 64.9 400.3 76.3 390.2L129.7 342.7C128.8 335.3 128.4 327.7 128.4 320C128.4 312.3 128.9 304.7 129.7 297.3L76.3 249.8C64.9 239.7 62.3 223 69.8 209.9L99.7 158.1C107.3 144.9 123.1 138.9 137.5 143.7L205.3 166.2C217.4 157.1 230.6 149.5 244.6 143.4L259.1 73.5zM320.3 400C364.5 399.8 400.2 363.9 400 319.7C399.8 275.5 363.9 239.8 319.7 240C275.5 240.2 239.8 276.1 240 320.3C240.2 364.5 276.1 400.2 320.3 400z" />
+                                </svg>
+                            </div>
+                            <p class="text-[#595959] text-center mt-1 text-[13px] font-medium">MECH</p>
+                        </div>
+                    </div>
+                    <!-- Recommended -->
+                    <div class="flex mx-2">
+                      <p class="text-[#595959] mt-5 font-medium">Recommended</p>
+                      <p class="text-[#307f34] mt-5 font-medium text-[12px] pt-1 ml-auto">See All</p>
+                    </div>
+                    <div class="grid grid-cols-2">
+                      <div class="bg-[#e0e1da]">
+                        <img />
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Dimmed background when profile panel is open -->
+            <div v-if="showProfile" @click="toggleProfilePanel" class="fixed inset-0 z-40" style="background-color: rgba(0, 0, 0, 0.5);"></div>
+            <!-- Slide-up profile panel -->
+            <transition name="slide-up">
+                <div v-if="showProfile" class="fixed bottom-0 left-0 w-full bg-[whitesmoke] p-4 rounded-t-2xl shadow-lg z-50">
+                    <p class="text-center text-[#41754e] font-semibold text-lg mb-4">Profile Options</p>
+                    <div @click="handleLogout" class="w-full bg-red-500 text-center text-[whitesmoke] py-1 rounded-xl font-semibold
                   hover:bg-red-600 active:bg-red-700 active:scale-95
-                  shadow-md hover:shadow-lg transition-all duration-200"
-          >
-            Logout
-          </div>
+                  shadow-md hover:shadow-lg transition-all duration-200">
+                        Logout
+                    </div>
 
-        </div>
-      </transition>
-    </ion-content>
-  </ion-page>
+                </div>
+            </transition>
+        </ion-content>
+    </ion-page>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonButtons,
-  IonButton,
-  IonIcon,
-  IonContent
-} from '@ionic/vue'
-import { logout } from '@/api/auth.js'
-import { codeOutline } from 'ionicons/icons'
-export default defineComponent({
-  components: {
-    IonPage,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonButtons,
-    IonButton,
-    IonIcon,
-    IonContent
-  },
-  data() {
-    return {
-      showProfile: false,
-      userName: null,
-    }
-  },
-  mounted() {
-    this.userName = localStorage.fullName
-  },
-  methods: {
-    toggleProfilePanel() {
-      this.showProfile = !this.showProfile
-    },
-    async handleLogout() {
-      try {
-        await logout()
-        this.$router.push('/login')
-      } catch (error) {
-        console.error('Logout failed:', error)
-      }
-    }
-  },
-})
+    import {
+        defineComponent
+    } from 'vue'
+    import {
+        IonPage,
+        IonHeader,
+        IonToolbar,
+        IonTitle,
+        IonButtons,
+        IonButton,
+        IonIcon,
+        IonContent
+    } from '@ionic/vue'
+    import {
+        logout
+    } from '@/api/auth.js'
+    import {
+        codeOutline
+    } from 'ionicons/icons'
+    export default defineComponent({
+        components: {
+            IonPage,
+            IonHeader,
+            IonToolbar,
+            IonTitle,
+            IonButtons,
+            IonButton,
+            IonIcon,
+            IonContent
+        },
+        data() {
+            return {
+                showProfile: false,
+                userName: null,
+            }
+        },
+        mounted() {
+            this.userName = localStorage.fullName
+        },
+        methods: {
+            toggleProfilePanel() {
+                this.showProfile = !this.showProfile
+            },
+            async handleLogout() {
+                try {
+                    await logout()
+                    this.$router.push('/login')
+                } catch (error) {
+                    console.error('Logout failed:', error)
+                }
+            }
+        },
+    })
 </script>
 
 
 <style scoped>
-.slide-up-enter-active,
-.slide-up-leave-active {
-  transition: transform 0.3s ease;
-}
-.slide-up-enter-from,
-.slide-up-leave-to {
-  transform: translateY(100%);
-}
+    .slide-up-enter-active,
+    .slide-up-leave-active {
+        transition: transform 0.3s ease;
+    }
+
+    .slide-up-enter-from,
+    .slide-up-leave-to {
+        transform: translateY(100%);
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;     /* Firefox */
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;             /* Chrome, Safari */
+    }
+
 </style>

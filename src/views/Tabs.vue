@@ -2,7 +2,7 @@
   <ion-page>
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
-      <ion-tab-bar slot="bottom">
+      <ion-tab-bar slot="bottom" class="py-1">
         <ion-tab-button class="m-2" tab="home" href="/tabs/home">
           <ion-icon :icon="home" />
           <!-- <ion-label>Home</ion-label> -->
