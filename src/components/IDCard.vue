@@ -1,10 +1,10 @@
 <template>
-  <div class="flex flex-col items-center justify-start min-h-screen bg-gradient-to-b from-gray-200 to-gray-300 pt-16">
+  <div class="flex flex-col items-center justify-start min-h-screen pt-16">
     
     <!-- Lanyard -->
     <div class="flex flex-col items-center">
       <!-- Strap -->
-      <div class="w-6 h-36 bg-gradient-to-b to-[#682c85] rounded-sm shadow-inner relative">
+      <div class="w-8 h-36 bg-gradient-to-b to-[#682c85] rounded-sm shadow-inner relative">
         <div class="absolute inset-y-0 left-1/2 w-px bg-white/10"></div>
       </div>
 
